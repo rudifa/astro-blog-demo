@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "Astro Blog Demo";
 ---
 
 <html lang='en'>
@@ -8,10 +8,10 @@
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>Astro Home</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <a href='/'>Home</a><br />
+    <a href='/'>{pageTitle}</a><br />
     <a href='/about'>About</a><br />
     <a href='/blog'>Blog</a><br />
     <h1>Astro here we come</h1>

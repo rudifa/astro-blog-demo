@@ -1,5 +1,28 @@
 ---
+const pageTitle = "About Me";
 
+const id = {
+  firstName: "Rudi",
+  country: "Switzerland",
+  occupation: "Old Programmer",
+  hobbies: ["walking", "skiing", "reading", "programming"],
+};
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Astro",
+  "Go",
+  "Swift",
+  "Python",
+  "Perl",
+  "C++",
+];
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang='en'>
@@ -8,13 +31,46 @@
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>About</title>
+    <title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
   </head>
   <body>
     <a href='/'>Home</a><br />
     <a href='/about'>About</a><br />
     <a href='/blog'>Blog</a><br />
-    <h1>My Astro site</h1>
-    <h2>Working hard thru the astro tutorial...</h2>
+    <h1>{pageTitle}</h1>
+    <h2>
+      <a href='https://github.com/rudifa'> Me?</a>
+      An old programmer learning new tricks.
+    </h2>
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {id.firstName}.</li>
+      <li>
+        I live in {id.country} and I work as an {id.occupation}.
+      </li>
+      {
+        id.hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {id.hobbies[0]} and {id.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li class='skill'>{skill}</li>)}
+    </ul>
+    <h2>Right now, working hard thru the astro tutorial...</h2>
   </body>
 </html>
