@@ -2,30 +2,43 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 
+// This function generates the static paths for your Astro pages based on tags.
 export async function getStaticPaths() {
+  // Get all posts by globbing the posts directory for markdown files.
   const allPosts = await Astro.glob("../posts/*.md");
-  return [
-    {params: {tag: "astro"}, props: {posts: allPosts}},
-    {params: {tag: "successes"}, props: {posts: allPosts}},
-    {params: {tag: "community"}, props: {posts: allPosts}},
-    {params: {tag: "blogging"}, props: {posts: allPosts}},
-    {params: {tag: "setbacks"}, props: {posts: allPosts}},
-    {params: {tag: "learning in public"}, props: {posts: allPosts}},
+
+  // Extract all unique tags from the posts' frontmatter.
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
   ];
+
+  // Return an array of objects, each containing a tag and the posts associated with that tag.
+  return uniqueTags.map((tag) => {
+    // Filter the posts for those that include the current tag.
+    const filteredPosts = allPosts.filter((post) =>
+      post.frontmatter.tags.includes(tag)
+    );
+
+    // Return an object with the tag as a parameter and the filtered posts as a prop.
+    return {
+      params: {tag},
+      props: {posts: filteredPosts},
+    };
+  });
 }
 
+// Extract the tag from the Astro params.
 const {tag} = Astro.params;
+
+// Extract the posts from the Astro props.
 const {posts} = Astro.props;
-const filteredPosts = posts.filter((post) =>
-  post.frontmatter.tags?.includes(tag)
-);
 ---
 
 <BaseLayout pageTitle={tag}>
   <p>Posts tagged with {tag}</p>
   <ul>
     {
-      filteredPosts.map((post) => (
+      posts.map((post) => (
         <BlogPost url={post.url} title={post.frontmatter.title} />
       ))
     }
