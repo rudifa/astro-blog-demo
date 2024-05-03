@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
 const allPosts = await Astro.glob("../pages/posts/*.md");
 const pageTitle = "Blog about learning Astro tricks";
 ---
@@ -21,12 +22,11 @@ const pageTitle = "Blog about learning Astro tricks";
     </a>
     <br /> manifests itself (in astro dev only, not in a built site).
   </p>
+  <h2>Here is the list of blog posts:</h2>
   <ul>
     {
       allPosts.map((post) => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
+        <BlogPost title={post.frontmatter.title} url={post.url} />
       ))
     }
   </ul>
