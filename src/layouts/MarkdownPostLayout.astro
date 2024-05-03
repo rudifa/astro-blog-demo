@@ -1,0 +1,12 @@
+---
+const {frontmatter} = Astro.props;
+frontmatter.pubDate = new Date(frontmatter.pubDate).toLocaleDateString();
+---
+
+<h1>{frontmatter.title}</h1>
+<p>Written by {frontmatter.author}</p>
+<p>Published on {frontmatter.pubDate}</p>
+<p>{frontmatter.description}</p>
+<hr />
+
+<slot />
