@@ -1,13 +1,14 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "./BaseLayout.astro";
 const {frontmatter} = Astro.props;
 frontmatter.pubDate = new Date(frontmatter.pubDate).toLocaleDateString();
 ---
 
-<h1>{frontmatter.title}</h1>
-<p>Written by {frontmatter.author}</p>
-<p>Published on {frontmatter.pubDate}</p>
-<p>{frontmatter.description}</p>
-<hr />
-
-<slot />
+<BaseLayout pageTitle={frontmatter.title}>
+  <p>Written by {frontmatter.author}</p>
+  <p>Published on {frontmatter.pubDate}</p>
+  <p>{frontmatter.description}</p>
+  <hr />
+  <slot />
+  <hr />
+</BaseLayout>
