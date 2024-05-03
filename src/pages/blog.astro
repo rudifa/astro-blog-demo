@@ -1,43 +1,27 @@
 ---
-import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
-const pageTitle = "Blog about learning Astro tricks";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-    <h1>{pageTitle}</h1>
-    <h2>Blogging slowly thru the astro tutorial...</h2>
-    <p>
-      Progress so far: <a href='https://docs.astro.build/en/tutorial/2-pages/2/'
-        >Write your first Markdown blog post</a
+<BaseLayout pageTitle='Blog about learning Astro tricks'>
+  <h2>Blogging slowly thru the astro tutorial...</h2>
+  <p>
+    Progress so far: <a href='https://docs.astro.build/en/tutorial/2-pages/2/'
+      >Write your first Markdown blog post</a
+    >
+  </p>
+  <p>
+    In these markdown blog posts the ugly bug <br /><a
+      href='https://github.com/withastro/astro/issues/2187'>
+      <i
+        >Raw markdown page incorrectly encodes some characters, e.g. ' becomes
+        â€™</i
       >
-    </p>
-    <p>
-      In these markdown blog posts the ugly bug <br /><a
-        href='https://github.com/withastro/astro/issues/2187'>
-        <i
-          >Raw markdown page incorrectly encodes some characters, e.g. ' becomes
-          â€™</i
-        >
-      </a>
-      <br /> manifests itself (in astro dev only, not in a built site).
-    </p>
-    <ul>
-      <li><a href='/posts/post-1'>Post 1</a></li>
-      <li><a href='/posts/post-2'>Post 2</a></li>
-      <li><a href='/posts/post-3'>Post 3</a></li>
-    </ul>
-    <Footer />
-  </body>
-</html>
+    </a>
+    <br /> manifests itself (in astro dev only, not in a built site).
+  </p>
+  <ul>
+    <li><a href='/posts/post-1'>Post 1</a></li>
+    <li><a href='/posts/post-2'>Post 2</a></li>
+    <li><a href='/posts/post-3'>Post 3</a></li>
+  </ul>
+</BaseLayout>
