@@ -5,7 +5,10 @@ const pageTitle = "My Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <Greeting messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+  <Greeting
+    client:load
+    messages={["Hi", "Hello", "Howdy", "Hey there", "Salut", "Hoi"]}
+  />
 
   <h2>Learning Astro? Start here:</h2>
   <h2>
