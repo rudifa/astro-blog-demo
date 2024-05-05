@@ -1,8 +1,8 @@
 ---
-title: 'My Second Blog Post'
-pubDate: 2022-07-01
-description: 'This is the second post of my new Astro blog.'
-author: 'Astro Learner'
+title: 'Second Blog Post'
+pubDate: 2024-05-05
+description: 'Learning about Astro Pages.'
+author: 'rudifa, an Astro Learner'
 image:
     url: '<https://docs.astro.build/assets/full-logo-light.png>'
     alt: 'The full Astro logo.'
@@ -11,14 +11,11 @@ tags: ["astro", "blogging", "learning in public"]
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
-## What I've accomplished
+## Work through the Astro tutorial [Unit 2 - Pages](https://docs.astro.build/en/tutorial/2-pages/)
 
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
+In Unit 2 we:
 
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
-
-3. **Making Blog Posts**: This is my second blog post! I now have Astro pages and Markdown posts!
-
-## What's next
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+- Create first Astro pages with the .astro syntax
+- Add blog posts with Markdown (.md) files
+- Style an individual page with `<style>`
+- Apply global styles across pages
