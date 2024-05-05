@@ -1,8 +1,8 @@
 ---
-title: 'My Third Blog Post'
-pubDate: 2022-07-01
-description: 'This is the third post of my new Astro blog.'
-author: 'Astro Learner'
+title: 'Third Blog Post'
+pubDate: 2022-05-05
+description: 'All about Components.'
+author: 'rudifa, an Astro Learner'
 image:
     url: '<https://docs.astro.build/assets/full-logo-light.png>'
     alt: 'The full Astro logo.'
@@ -11,14 +11,11 @@ tags: ["astro", "blogging", "learning in public"]
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
-## What I've accomplished
+## Work through the Astro tutorial [Unit 3 - Components](https://docs.astro.build/en/tutorial/3-components/)
 
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
+In Unit 3 we create astro Components:
 
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
-
-3. **Making Blog Posts**: This is my third blog post! I now have Astro pages and Markdown posts!
-
-## What's next
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+- A Navigation component that presents a menu of links to your pages
+- A Footer component to include at the bottom of each page
+- A Social Media component, used in the Footer, that links to profile pages
+- An interactive Hamburger component to toggle the Navigation on mobile
