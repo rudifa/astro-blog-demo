@@ -2,12 +2,11 @@
 import BaseLayout from "./BaseLayout.astro";
 import "../styles/tags.css";
 const {frontmatter} = Astro.props;
-frontmatter.pubDate = new Date(frontmatter.pubDate).toLocaleDateString();
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
   <p>Written by {frontmatter.author}</p>
-  <p>Published on {frontmatter.pubDate}</p>
+  <p>Published on {frontmatter.pubDate.toString().slice(0, 10)}</p>
   <p>{frontmatter.description}</p>
   <!-- <img src={frontmatter.image.url} width='300' alt={frontmatter.image.alt} /> -->
   <div class='tags'>

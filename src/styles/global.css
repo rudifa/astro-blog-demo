@@ -59,6 +59,11 @@ a:focus {
     background-color: #ff9776;
 }
 
+a:hover,
+a:focus {
+    background-color: #f5b4a0;
+}
+
 .expanded {
     display: unset;
 }
@@ -80,4 +85,15 @@ a:focus {
     .hamburger {
         display: none;
     }
+}
+
+/* dark mode styles */
+
+html.dark {
+    background-color: #0d0950;
+    color: #fff;
+}
+
+.dark .nav-links a {
+    color: #fff;
 }
