@@ -1,5 +1,6 @@
 {
     "name": "astro-blog-demo",
+    "author": "Rudi Farkas (https://github.com/rudifa)",
     "type": "module",
     "version": "0.0.1",
     "scripts": {
