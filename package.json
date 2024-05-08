@@ -1,18 +1,19 @@
 {
-  "name": "astro-blog-demo",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/preact": "^3.2.0",
-    "@astrojs/rss": "^4.0.5",
-    "astro": "^4.7.1",
-    "preact": "^10.21.0"
-  }
+    "name": "astro-blog-demo",
+    "author": "Rudi Farkas (https://github.com/rudifa)",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev --host",
+        "start": "astro dev --host",
+        "build": "astro build",
+        "preview": "astro preview --host",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/preact": "^3.2.0",
+        "@astrojs/rss": "^4.0.5",
+        "astro": "^4.7.1",
+        "preact": "^10.21.0"
+    }
 }
