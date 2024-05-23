@@ -1,0 +1,40 @@
+---
+import {getCollection} from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "System info";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>System info</h2>
+  <p id='inner-w-h'></p>
+  <p id='outer-w-h'></p>
+
+  <div id='squarepx'>100px x 100px</div>
+  <br />
+  <div id='squarept'>100pt x 100pt</div>
+</BaseLayout>
+
+<style>
+  #squarepx {
+    width: 100px;
+    height: 100px;
+    background-color: #888;
+  }
+  #squarept {
+    width: 100pt;
+    height: 100pt;
+    background-color: #888;
+  }
+</style>
+
+<script client:inline>
+  function updateWindowSize() {
+    const ix = document.getElementById("inner-w-h");
+    ix.textContent = `window.innerWidth: ${window.innerWidth}, window.innerHeight: ${window.innerHeight}`;
+
+    const ox = document.getElementById("outer-w-h");
+    ox.textContent = `window.outerWidth: ${window.outerWidth}, window.outerHeight: ${window.outerHeight}`;
+  }
+  window.onresize = updateWindowSize;
+  updateWindowSize();
+</script>
