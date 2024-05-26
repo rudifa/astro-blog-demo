@@ -4,7 +4,7 @@ This is a demo Astro blog site for the Astro tutorial series.
 
 Astro features were added following the [Build your first Astro Blog](https://docs.astro.build/en/tutorial/0-introduction/) tutorial.
 
-The site is published on [netlify](https://astro-blog-again.netlify.app/).
+The site is published on [netlify](https://astro-blog-again.netlify.app/) and on [vercel](https://rudifa-astro-blog-demo.vercel.app/blog).
 
 ## Project creation
 
