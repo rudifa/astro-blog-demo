@@ -1,18 +1,52 @@
 ---
-title: Seventh Blog Post
-author: 'rudifa, an Astro Learner'
-description: "Creating Content Collections."
+title: Eighth Blog Post
+author: "rudifa, an Astro Learner"
+description: "Investigating tag patterns."
 image:
-    url: "https://docs.astro.build/default-og-image.png"
-    alt: "The word astro against an illustration of planets and stars."
-pubDate: 2022-05-05
-tags: ["astro", "successes", "short"]
+  url: "https://docs.astro.build/default-og-image.png"
+  alt: "The word astro against an illustration of planets and stars."
+pubDate: 2022-05-23
+tags:
+  - astro
+  - tags
+  - patterns
+
+# tags: ["yaml", "json", "toml"]
+
+tech: ["astro", "vercel"]
+tracks:
+  - Astro content collections
+techno:
+  - astro
+  - vercel
+audience:
+  - Dev
 ---
 
-## Work through the Astro tutorial [Extend with Content Collections](https://docs.astro.build/en/tutorials/add-content-collections/)
+## Investigate astro tag patterns
 
-In this tutorial, we learn how to:
+### Which formats can we use to define frontmatter properties such as tags?
 
-- Move the *.md files from the `src/content/posts` directory to a new `src/content/collections` directory
-- Create a schema to define the blog post frontmatter
-- Use `getCollection()` to get blog post content and metadata
+```
+In Markdown files, frontmatter is typically written in YAML, but can also be written in JSON or TOML. Here's how you can define a tags property in each format:
+
+YAML:
+---
+tags:
+  - tag1
+  - tag2
+  - tag3
+---
+
+JSON:
+
+---
+"tags": ["tag1", "tag2", "tag3"]
+---
+TOML:
+
+---
+tags = ["tag1", "tag2", "tag3"]
+---
+In each of these examples, tags is an array of strings.
+```
