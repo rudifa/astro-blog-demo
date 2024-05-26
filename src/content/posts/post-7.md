@@ -1,5 +1,5 @@
 ---
-title: Eighth Blog Post
+title: Seventh Blog Post
 author: "rudifa, an Astro Learner"
 description: "Investigating tag patterns."
 image:
